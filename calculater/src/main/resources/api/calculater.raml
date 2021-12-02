@@ -1,0 +1,52 @@
+#%RAML 1.0
+types:
+  newtype:
+    type: any
+title: calculater
+version: v.0
+description: "this API used to perferom math oprations"
+protocols:
+  - HTTP
+traits:
+  reuse: !include traits/reusblecode.raml
+/addition:
+  get:
+    is: reuse
+    responses:
+      200:
+        body:
+              application/json:
+                example: !include Examples/addition-file.json
+               
+/substraction:
+  put:
+    is:
+      - reuse
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/addition-file.json           
+/divison:
+  post:
+    is:
+      - reuse
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/Subb-file.json
+/multiplication:
+  patch:
+    is:
+      - reuse
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/Multi-file.json
+        
+     
+      
+
+       
